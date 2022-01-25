@@ -1,5 +1,5 @@
 {
-  "name": "react-platzi-course",
+  "name": "react-todo-list",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -37,5 +37,14 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"
-  }
+  },
+  "description": "A simple React TODO List",
+  "keywords": [
+    "react",
+    "todo",
+    "course",
+    "platzi"
+  ],
+  "author": "Manuel Marín",
+  "license": "MIT"
 }
