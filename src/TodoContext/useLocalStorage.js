@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function useLocalStorage(itemName, initialValue) {
   const [item, setItem] = useState(initialValue);
@@ -23,7 +23,7 @@ function useLocalStorage(itemName, initialValue) {
       } catch (error) {
         setError(error);
       }
-    }, 1000 * 3);
+    }, 1000 * 2);
   }, []);
 
   const saveItem = (newItem) => {
