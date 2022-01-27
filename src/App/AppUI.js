@@ -10,6 +10,7 @@ import TodoForm from "../TodoForm";
 import TodosError from "../TodosError";
 import TodosLoading from "../TodosLoading";
 import TodosEmpty from "../TodosEmpty";
+import "./App.css";
 
 export default function AppUI() {
   const {
@@ -22,7 +23,7 @@ export default function AppUI() {
     setOpenModal,
   } = useContext(TodoContext);
   return (
-    <React.Fragment>
+    <div className="container">
       <TodoCounter />
       <TodoSearch />
 
@@ -49,6 +50,6 @@ export default function AppUI() {
       )}
 
       <CreateTodoButton openModal={openModal} setOpenModal={setOpenModal} />
-    </React.Fragment>
+    </div>
   );
 }
