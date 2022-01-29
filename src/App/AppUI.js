@@ -17,10 +17,11 @@ export default function AppUI() {
     loading,
     error,
     searchedTodos,
-    completeTodo,
+    toggleTodo,
     deleteTodo,
     openModal,
     setOpenModal,
+    toggleModal,
   } = useContext(TodoContext);
   return (
     <div className="container">
@@ -30,14 +31,16 @@ export default function AppUI() {
       <TodoList>
         {error && <TodosError />}
         {loading && [1, 2, 3, 4].map(() => <TodosLoading />)}
-        {!loading && !searchedTodos.length && <TodosEmpty />}
+        {!loading && !searchedTodos.length && (
+          <TodosEmpty toggleModal={toggleModal} />
+        )}
 
         {searchedTodos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
+            toggleTodo={() => toggleTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />
         ))}
@@ -49,7 +52,7 @@ export default function AppUI() {
         </Modal>
       )}
 
-      <CreateTodoButton openModal={openModal} setOpenModal={setOpenModal} />
+      <CreateTodoButton setOpenModal={setOpenModal} toggleModal={toggleModal} />
     </div>
   );
 }

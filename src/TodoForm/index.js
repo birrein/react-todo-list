@@ -18,7 +18,7 @@ const TodoForm = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <label>Escribe tu nuevo To Do</label>
+      <label>Escribe tu nueva tarea</label>
       <textarea
         value={newTodoValue}
         onChange={(e) => setNewTodoValue(e.target.value)}

@@ -28,10 +28,10 @@ const TodoProvider = ({ children }) => {
     });
   }
 
-  const completeTodo = (text) => {
+  const toggleTodo = (text) => {
     const todoIndex = todos.findIndex((todo) => todo.text === text);
     const newTodos = [...todos];
-    newTodos[todoIndex].completed = true;
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     saveTodos(newTodos);
   };
 
@@ -45,6 +45,10 @@ const TodoProvider = ({ children }) => {
     saveTodos(newTodos);
   };
 
+  const toggleModal = () => {
+    setOpenModal((prevState) => !prevState);
+  };
+
   return (
     <TodoContext.Provider
       value={{
@@ -56,10 +60,11 @@ const TodoProvider = ({ children }) => {
         setSearchValue,
         searchedTodos,
         addTodo,
-        completeTodo,
+        toggleTodo,
         deleteTodo,
         openModal,
         setOpenModal,
+        toggleModal,
       }}
     >
       {children}

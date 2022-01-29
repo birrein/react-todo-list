@@ -1,9 +1,17 @@
 import React from "react";
 
-const TodosEmpty = () => {
+const TodosEmpty = ({ toggleModal }) => {
   return (
-    <div>
-      <p>¡Crea tu primer TODO!</p>
+    <div style={{ textAlign: "center" }}>
+      <p>
+        <a
+          href="javascript:void(0)"
+          onClick={toggleModal}
+          style={{ color: "lightblue" }}
+        >
+          ¡Crea tu primera tarea!
+        </a>
+      </p>
     </div>
   );
 };
